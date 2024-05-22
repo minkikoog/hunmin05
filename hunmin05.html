@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>훈민영어에 온 것을 환영해!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('hunmin05.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1, label, input {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .subtext {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      border-bottom: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      width: 300px;
+      font-size: 18px;
+      outline: none;
+    }
+
+    .browse-container {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .browse-link {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff4500;
+      text-decoration: none;
+      border: 2px solid #ff4500;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .browse-link:hover {
+      background-color: #ff4500;
+      color: #fff;
+    }
+
+    .submit-button {
+      background-color: #ff4500;
+      color: #fff;
+      font-size: 20px;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .submit-button:hover {
+      background-color: #cc3700;
+    }
+
+    .copyright {
+      font-size: 14px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>훈민영어에 온 것을 환영해!</h1>
+    <p class="subtext">훈민영어는 영어문법 공부의 암기법을 주는 곳이야</p>
+    <div class="browse-container">
+      <p><a href="hunmin05_level1.html" class="browse-link">들어가기</a></p>
+    </div>
+    <form onsubmit="checkPassword(event)">
+      <label for="username">유저 아이디:</label>
+      <input type="text" id="username" name="username" placeholder="아이디 입력">
+      <br>
+      <label for="password">패스워드:</label>
+      <input type="password" id="password" name="password" placeholder="패스워드 입력">
+      <br>
+      <button type="submit" class="submit-button">제출</button>
+    </form>
+    <p class="copyright">훈민영어의 모든 내용은 훈민영어에게 귀속되어 있습니다.</p>
+  </div>
+
+  <script>
+    function checkPassword(event) {
+      event.preventDefault(); // 기본 제출 동작 방지
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // 패스워드
+      if (password === '사용자의패스워드') {
+        // 사용자가 전에 공부한 페이지로 이동 (예시로 'user_study_history' 변수에 페이지 주소 저장)
+        var userStudyHistory = '이전_페이지_주소';
+
+        // 사용자의 공부 기록이 있으면 해당 페이지로 이동, 없으면 첫 번째 레벨 페이지로 이동
+        if (userStudyHistory) {
+          window.location.href = userStudyHistory;
+        } else {
+          window.location.href = 'hunmin05_level1.html';
+        }
+      } else {
+        // 패스워드가 일치하지 않는 경우 처리
+        alert('패스워드가 잘
